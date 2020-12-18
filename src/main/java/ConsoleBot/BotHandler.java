@@ -1,6 +1,9 @@
 package ConsoleBot;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -11,6 +14,8 @@ import java.util.Scanner;
  */
 
 public class BotHandler {
+    List<String> board = new ArrayList<>();
+    List<String> questions = new ArrayList<>();
 
     public void runBot(){
 
@@ -20,20 +25,32 @@ public class BotHandler {
 
     }
 
-    public void getLeaderBoard(){
+    public ArrayList<String> readFile(String fileName){
+        ArrayList<String> retList = new ArrayList<>();
         try {
-            InputStream input = getClass().getResourceAsStream("leaderBoard.txt");
-            File myObj = new File("leaderBoard.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+            final InputStream inputStream = this.getClass().getResourceAsStream("/"+fileName);
+            String newLine = System.getProperty("line.separator");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder result = new StringBuilder();
+            boolean flag = false;
+            for (String line; (line = reader.readLine()) != null; ) {
+                result.append(flag? newLine: "").append(line);
+                flag = true;
             }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            retList.addAll(Collections.singleton(result.toString()));
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return retList;
+    }
+
+    public void getLeaderBoard(){
+        board = readFile("leaderBoard.txt");
+    }
+
+    public ArrayList<String> getQuestions(){
+        questions = readFile("questions.txt");
+        return (ArrayList<String>) questions;
     }
 
     public void saveProgress(){

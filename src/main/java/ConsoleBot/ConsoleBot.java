@@ -16,7 +16,7 @@ public class ConsoleBot {
     String response;
     String errorMessage = "Wrong command please refer to /start for help";
     int userId;
-    static String[] commands = {"/start",  "/trivia", "/wiki_search"};
+    static String[] commands = {"/start",  "/trivia", "/leaderBoard"};
     List<String> board = new ArrayList<>();
 
 

@@ -13,6 +13,7 @@ public class ConsoleMainClass {
 
         // Set program variables.
         ConsoleBot consolebot = new ConsoleBot();
-
+        BotHandler handler = new BotHandler();
+        System.out.println(handler.getQuestions());
     }
 }
