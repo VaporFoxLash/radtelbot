@@ -1,5 +1,6 @@
 package ConsoleBot;
 
+import java.nio.file.WatchEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +15,21 @@ public class ConsoleBot {
 
     String message;
     String response;
+    String wellcomeMessage = "Wellcome, to get started type /start";
     String errorMessage = "Wrong command please refer to /start for help";
     int userId;
     static String[] commands = {"/start",  "/trivia", "/leaderBoard"};
-    List<String> board = new ArrayList<>();
 
 
+    public void setMessage(String message){
+        this.message = message;
+    }
     public String getMessage(){
         return this.message;
+    }
+
+    public void printWelcomeMessage(){
+        System.out.println(this.wellcomeMessage);
     }
 
     public String getResponse(String response){
@@ -33,6 +41,10 @@ public class ConsoleBot {
             }
         }
         return response;
+    }
+
+    public void sendMessage(String message){
+        System.out.println(getMessage());
     }
 
 //    public void addToTheBoard(){

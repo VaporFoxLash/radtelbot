@@ -10,10 +10,8 @@ package ConsoleBot;
 public class ConsoleMainClass {
     // Run Bot methods.
     public static void main(String args[]) {
-
-        // Set program variables.
-        ConsoleBot consolebot = new ConsoleBot();
         BotHandler handler = new BotHandler();
-        System.out.println(handler.getQuestions());
+//        System.out.println(handler.getLeaderBoard());
+        handler.runBot();
     }
 }

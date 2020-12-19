@@ -11,13 +11,25 @@ package ConsoleBot;
 class Player {
     String playerName;
     int playerId;
+    int score = 0;
 
-    public Player(String playerName, int playerId){
+    public void setPlayerName(String playerName){
         this.playerName = playerName;
-        this.playerId = playerId;
+    }
+
+    public String getPlayerName(){
+        return this.playerName;
     }
 
     public void setPlayerId(){
         this.playerId = (int) (Math.random() * (1000 - 100 + 1) + 100);
+    }
+
+    public int getPlayerId() {
+        return this.playerId;
+    }
+
+    public void increaseScore(){
+        this.score++;
     }
 }
