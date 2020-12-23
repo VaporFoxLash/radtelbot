@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Telegram bot
- * @author Radebe Donald
+ * @author Radebe Donald & Tamim Rayan
  * @version 1.1
  * @since 23.11.2020
  */
@@ -43,9 +43,6 @@ public class ConsoleBot {
         return response;
     }
 
-    public void sendMessage(String message){
-        System.out.println(getMessage());
-    }
 
 //    public void addToTheBoard(){
 //        board.add(new LeaderBoard(number, username, score);

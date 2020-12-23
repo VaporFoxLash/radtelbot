@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Telegram bot
- * @author Radebe Donald
+ * @author Radebe Donald & Tamim Rayan
  * @version 1.1
  * @since 23.11.2020
  */
@@ -96,7 +96,7 @@ public class BotHandler extends ConsoleBot{
 
     }
 
-    private boolean compareAnswer(String ans, String correctAnswer) {
+    public boolean compareAnswer(String ans, String correctAnswer) {
         if (ans.equals(correctAnswer)){
             return true;
         }else {

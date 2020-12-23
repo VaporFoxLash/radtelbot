@@ -2,8 +2,7 @@ package ConsoleBot;
 
 /**
  * Telegram bot
- * @author Radebe Donald
- * @author Rayan Tamim
+ * @author Radebe Donald & Tamim Rayan
  * @version 1.1
  * @since 23.11.2020
  */
