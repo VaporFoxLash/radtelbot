@@ -3,6 +3,7 @@ package ConsoleBot;
 import java.io.*;
 import java.util.*;
 
+
 /**
  * Telegram bot
  * @author Radebe Donald
@@ -15,7 +16,7 @@ public class BotHandler extends ConsoleBot{
 
     public void runBot(){
         printWelcomeMessage();
-        String cmd = scanner.nextLine();
+        String cmd = scanner.nextLine().toLowerCase();
         if (cmd.equals("/start")){
             start();
         }
@@ -25,9 +26,20 @@ public class BotHandler extends ConsoleBot{
         System.out.println("Use following commands to interact with the bot:" +
                 "\n /trivia - to play a trivia game" +
                 "\n /leaderBoard - to view the top player arranged by their score" +
-                "\n /start - for help" +
+                "\n /help - for help" +
                 "\n /exit - to exit the bot");
-        String cmd = scanner.nextLine();
+
+        String cmd = scanner.nextLine().toLowerCase();
+        int invalid_input = 0;
+
+        while(!cmd.equals("/trivia") && !cmd.equals("/leaderboard")
+                && !cmd.equals("/help") && !cmd.equals("/exit") && invalid_input <= 2){
+            invalid_input++;
+            System.out.println("Please enter a valid command or type /exit for close the app.");
+            System.out.print("->");
+            cmd = scanner.nextLine();
+        }
+
         if (cmd.equals("/trivia")) {
                 play();
         }else if (cmd.equals("/leaderBoard")) {
@@ -49,7 +61,7 @@ public class BotHandler extends ConsoleBot{
         player.setPlayerName(scanner.nextLine());
         player.setPlayerId();
         int count = 0;
-        while (count < 3){
+        while (count < 5){
             List<String> question = new ArrayList<>();
             question.addAll(Arrays.asList(getQuestions().get(count).split(", ")));
             System.out.println(question.get(0)+"\n"+question.get(1)+" or "+question.get(2));
@@ -59,11 +71,11 @@ public class BotHandler extends ConsoleBot{
             count++;
 //            System.out.println();
 
-            if (count == 3){
+            if (count == 5){
                 break;
             }
         }
-        System.out.println("Your Score"+player.score);
+        System.out.println("Your Score : " + player.score);
     }
 
     public void ask(){

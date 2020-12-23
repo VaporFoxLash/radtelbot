@@ -1,3 +1,14 @@
 Can constructor be inherited?, true, false, true
 Which of the following is Faster - StringBuilder or StringBuffer?, stringbuffer, stringBuilder, stringBuilder
 What is the default value of short variable?, 0.0, null, 0.0
+Can we have two public classes in one java file?, true, false, false
+Static binding uses which information for binding?, type, object, type
+What is the default value of String variable?, "", null, null
+Subclassing polymorphism is sometimes called "true polymorphism"?, true, false, true
+What is the size of float variable?, 16 bit, 32 bit, 32 bit
+Objects are stored on Stack?, true, false, false
+What is the default value of byte variable?, 0, null, 0
+What is the default value of float variable? 0, 0.0f, 0.0f
+Is an empty .java file a valid source file?, true, false, true
+This is the parent of Error and Exception classes., throwable, catchable, throwable
+What is the default value of long variable? 0, 0L, 0L
