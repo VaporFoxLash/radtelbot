@@ -8,7 +8,7 @@ package ConsoleBot;
  * @since 23.11.2020
  */
 
-class Player {
+public class Player {
     String playerName;
     int playerId;
     int score = 0;
