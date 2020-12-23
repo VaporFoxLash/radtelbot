@@ -67,32 +67,17 @@ public class BotHandler extends ConsoleBot{
             System.out.println(question.get(0)+"\n"+question.get(1)+" or "+question.get(2));
             if (compareAnswer(scanner.nextLine(), question.get(3))){
                 player.increaseScore();
+                System.out.println("Correct!");
+            }else {
+                System.out.println("Wrong Answer! The correct answer is "+question.get(3));
             }
             count++;
-//            System.out.println();
 
             if (count == 5){
                 break;
             }
         }
         System.out.println("Your Score : " + player.score);
-    }
-
-    public void ask(){
-        ArrayList<String> quiz = new ArrayList<>();
-        String[] questionList = new String[5];
-
-        for (int i = 0; i < 5; i++) {
-            questionList[i] = String.valueOf(getQuestions().get(i).split(", "));
-            quiz.add(questionList[2]);
-            if (compareAnswer(scanner.nextLine(), quiz.get(i))){
-                System.out.println("Correct!");
-                ask();
-            }else {
-                System.out.println("Wrong Answer!");
-                ask();
-            }
-        }
 
     }
 
