@@ -33,7 +33,7 @@ Bot: Welcome, to get started type /start
 User:/start
 Bot: (Display how it works)
 User: /trivia
-Bot: Q1/5: Can constructor be inherited?
+Bot: Q1/5: Can constructor be inherited?\n
  true, false ?
 User: false
 Bot: Wrong! The correct answer is true
