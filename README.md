@@ -29,21 +29,21 @@ Search @radtelbot on telegram and use the commands below to interact with the bo
 * To run ConsoleBot - run ConsoleMainClass inside ConsoleBot package
 * To run TelegramBot -run MainClass found isnide TelegramBot package
 * Examples:
-Bot: Welcome, to get started type /start
-User:/start
-Bot: (Display how it works)
-User: /trivia
-Bot: Q1/5: Can constructor be inherited?\n
- true, false ?
-User: false
-Bot: Wrong! The correct answer is true
- Continue ?
-User: Continue
-Bot: (Ask Next question until the last question)
-Here is your score: 4/5
-Play again, exit ?
-User: Exit
-Bot: Goodbye <Username> 
+* Bot: Welcome, to get started type /start
+* User:/start
+* Bot: (Display how it works)
+* User: /trivia
+* Bot: Q1/5: Can constructor be inherited?\n
+*  true, false ?
+* User: false
+* Bot: Wrong! The correct answer is true
+*  Continue ?
+* User: Continue
+* Bot: (Ask Next question until the last question)
+* Here is your score: 4/5
+* Play again, exit ?
+* User: Exit
+* Bot: Goodbye <Username> 
 
 
 ## Commands
