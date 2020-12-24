@@ -1,5 +1,10 @@
 package TelegramBot;
 
+/**
+ * Define the commands that user can give to the bot
+ * @author Donald
+ */
+
 public interface Comands {
     String START = "/start";
     String TRIVIA = "/trivia"; //trivia game

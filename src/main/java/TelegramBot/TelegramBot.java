@@ -16,7 +16,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.lang.Math.toIntExact;
+/**
+ * Telegram bot
+ * @author Radebe Donald
+ * @version 1.1
+ * @since 23.12.2020
+ * Get the update and send a message to the user
+ * Buttons and Commands are used to exchange information between theuser and the bot
+ */
 
 public class TelegramBot extends TelegramLongPollingBot implements Comands {
     /**

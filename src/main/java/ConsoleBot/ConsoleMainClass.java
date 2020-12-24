@@ -5,6 +5,7 @@ package ConsoleBot;
  * @author Radebe Donald
  * @version 1.1
  * @since 23.11.2020
+ * Main Class to run our console bot
  */
 
 public class ConsoleMainClass {
