@@ -59,7 +59,7 @@ public class BotHandler extends ConsoleBot{
         System.out.println("Enter your name:");
         Player player = new Player();
         player.setPlayerName(scanner.nextLine());
-        player.setPlayerId();
+        player.setPlayerId(scanner.nextInt());
         int count = 0;
         while (count < 5){
             List<String> question = new ArrayList<>();
@@ -89,10 +89,10 @@ public class BotHandler extends ConsoleBot{
         }
     }
 
-    public String readFile(String fileName){
+    public static String readFile(String fileName){
         StringBuilder result = new StringBuilder();
         try {
-            final InputStream inputStream = this.getClass().getResourceAsStream("/"+fileName);
+            final InputStream inputStream = BotHandler.class.getResourceAsStream("/"+fileName);
             String newLine = System.getProperty("line.separator");
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             boolean flag = false;
@@ -106,20 +106,26 @@ public class BotHandler extends ConsoleBot{
         return result.toString();
     }
 
-    public ArrayList<String> getLeaderBoard(){
+    public static List<String> getLeaderBoard(){
         List<String> leaderBoard = new ArrayList<>();
         leaderBoard.addAll(Arrays.asList(readFile("leaderBoard.txt").split("\\r?\\n")));
         return (ArrayList<String>) leaderBoard;
     }
 
-    public ArrayList<String> getQuestions(){
+    public static List<String> getQuestions(){
         List<String> quizList = new ArrayList<>();
         quizList.addAll(Arrays.asList(readFile("questions.txt").split("\\r?\\n")));
         return (ArrayList<String>) quizList;
     }
 
-    public void saveProgress(){
-        //TODO
+    public static void saveProgress(Player player){
+        try {
+            FileWriter myWriter = new FileWriter("leaderBoard.txt");
+            myWriter.write(player.playerName + " - " + player.score);
+            myWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

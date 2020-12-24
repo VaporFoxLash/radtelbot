@@ -25,7 +25,7 @@ public class ConsoleBot {
         this.message = message;
     }
     public String getMessage(){
-        return this.message;
+        return message;
     }
 
     public void printWelcomeMessage(){

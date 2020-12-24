@@ -1,29 +1,15 @@
 package TelegramBot;
 
-import ConsoleBot.Player;
+
+import ConsoleBot.BotHandler;
 
 
-public class PlayGame implements Quiz {
-    Player player = new Player();
+public class PlayGame  {
+    public void getNextQuestion(){
 
-
-    @Override
-    public String getQuestion() {
-        return null;
     }
 
-    @Override
-    public String getOption1() {
-        return null;
-    }
+    public void endGame(){
 
-    @Override
-    public String getOption2() {
-        return null;
-    }
-
-    @Override
-    public String getAnswer() {
-        return null;
     }
 }

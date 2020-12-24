@@ -21,6 +21,7 @@ public class MainClass {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
             telegramBotsApi.registerBot(new TelegramBot());
+            System.out.println("Bot is running...");
 
         } catch (TelegramApiException e) {
             e.printStackTrace();

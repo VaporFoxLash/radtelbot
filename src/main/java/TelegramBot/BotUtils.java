@@ -1,23 +1,43 @@
 package TelegramBot;
 
-import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.objects.Update;
+import ConsoleBot.BotHandler;
+import ConsoleBot.Player;
 
-public class BotUtils {
-    public void welcomeMessage(Update update, long chatId){
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+public class BotUtils implements Board {
+    int quizCount = 0;
+
+    @Override
+    public void addToTheBoard(Player player) {
+        if (player.getScore()>=3){
+            BotHandler.saveProgress(player);
+        }
     }
 
-    public void sendReply(Update update, long chatId, String string) {
-        String call_data = update.getCallbackQuery().getData();
-        long message_id = update.getCallbackQuery().getMessage().getMessageId();
 
-        SendMessage message = new SendMessage().setChatId(chatId)
-                .setText(string);
-
+    @Override
+    public String getBoard() {
+        List<String> leaderBoard = BotHandler.getLeaderBoard();
+        String board = new String();
+        for (int i = 0; i < leaderBoard.size(); i++) {
+            board += leaderBoard.get(i) + "\n";
+        }
+        return board;
     }
 
-    public void addKeyboardLayOut(String buttonName){
-
+    public List<String> getNextQuestion(){
+        List<String> question = new ArrayList<>();
+        question.addAll(Arrays.asList(BotHandler.getQuestions().get(quizCount).split(", ")));
+        quizCount++;
+        return question;
     }
+
+    public void exit(Player player){
+        player.setPlayerName(null);
+        player.setPlayerId(0);
+    }
+
 }

@@ -18,18 +18,22 @@ public class Player {
     }
 
     public String getPlayerName(){
-        return this.playerName;
+        return playerName;
     }
 
-    public void setPlayerId(){
-        this.playerId = (int) (Math.random() * (1000 - 100 + 1) + 100);
+    public void setPlayerId(int playerId){
+        this.playerId = playerId;
     }
 
     public int getPlayerId() {
-        return this.playerId;
+        return playerId;
     }
 
     public void increaseScore(){
-        this.score++;
+        score++;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

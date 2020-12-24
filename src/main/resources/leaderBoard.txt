@@ -1,6 +1,6 @@
-1 - Donald - 5
-2 - Tamim - 4
-3 - Rayan - 3
-4 - Don - 3
-5 - Ricky - 2
-6 - Tom - 1
+Donald - 5
+Tamim - 4
+Rayan - 3
+Don - 3
+Ricky - 2
+Tom - 1
