@@ -3,11 +3,16 @@ package ConsoleBot;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Testing Console bot
+ * @author Tamim Rayan
+ */
 class ConsoleBotTest {
 
 
+    /**
+     * Test getMessage.
+     */
     @Test
      public void getMessageTest(){
         var consoleBot = new ConsoleBot();
@@ -16,6 +21,9 @@ class ConsoleBotTest {
     }
 
 
+    /**
+     * Test getResponse when user enter a command.
+     */
     @Test
      public void getResponseTest(){
         var consoleBot = new ConsoleBot();

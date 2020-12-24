@@ -32,7 +32,7 @@ public class BotHandler extends ConsoleBot{
         String cmd = scanner.nextLine().toLowerCase();
         int invalid_input = 0;
 
-        while(!cmd.equals("/trivia") && !cmd.equals("/leaderboard")
+        while(!cmd.equals("/trivia") && !cmd.equals("/leaderBoard")
                 && !cmd.equals("/help") && !cmd.equals("/exit") && invalid_input <= 2){
             invalid_input++;
             System.out.println("Please enter a valid command or type /exit for close the app.");
@@ -61,6 +61,7 @@ public class BotHandler extends ConsoleBot{
         player.setPlayerName(scanner.nextLine());
         player.setPlayerId();
         int count = 0;
+
         while (count < 5){
             List<String> question = new ArrayList<>();
             question.addAll(Arrays.asList(getQuestions().get(count).split(", ")));
@@ -77,6 +78,7 @@ public class BotHandler extends ConsoleBot{
                 break;
             }
         }
+        LeaderBoard jk = new LeaderBoard(player.playerId,player.playerName,player.score);
         System.out.println("Your Score : " + player.score);
 
     }
